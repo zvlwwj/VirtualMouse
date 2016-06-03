@@ -158,11 +158,11 @@ public class CircleScroll extends View{
 	
 	public void moveScoller(float x ,float y,MotionEvent event){
 		this.circleX = x;
-		this.circleY = y;
+		this.circleY = y-dp2px(66, context);
 		this.setVisibility(View.VISIBLE);
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_MOVE:
-			maxDesY = event.getRawY()+dp2px(66, context)-centerY;
+			maxDesY = event.getRawY()-centerY;
 			invalidate();
 			break;
 		}
